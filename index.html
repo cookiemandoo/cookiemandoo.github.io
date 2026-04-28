@@ -64,11 +64,9 @@
 
         /* 복잡도 드롭다운과 버튼을 가로로 정렬하기 위한 래퍼 */
         .complex-wrap {display: flex;align-items: center;justify-content: center;gap: 5px;}
-         /* 드롭다운과 버튼 사이의 여백 */
         
         /* 래퍼 안의 select 크기 덮어쓰기 (기존 100% -> 65%로 축소) */
-        .site-body .complex-wrap select {width: 65%;padding: 6px 8px; /* 기존 10px보다 패딩을 줄여서 높이도 얄팍하게 조정 */}
-           
+        .site-body .complex-wrap select {width: 65%;padding: 6px 8px;}
 
         /* ================= 팝업(모달) 스타일 ================= */
         .modal-overlay { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
@@ -178,7 +176,7 @@
     <div id="tab-iso" class="tab-content active">
         <div class="card">
             <div class="logo-container"><img src="한국생산성본부인증원_로고.JPG" alt="KPCQA Logo"></div>
-            <h2>ISO MD 계산기 (Rev 1.8_개발자: KPCQA-적합성인증센터)</h2>
+            <h2>ISO MD 계산기 (Rev 1.9_개발자: KPCQA-적합성인증센터)</h2>
             <p class="subtitle">사업장이 여러 개일 경우 '사업장 추가' 버튼을 눌러 개별 산정하세요.</p>
             
             <div id="sites-wrapper">
@@ -214,7 +212,7 @@
                                         <td><select class="cy14001" onchange="updateUI_block(this)"><option value="none">미선택</option><option value="initial">최초심사</option><option value="surv">사후심사</option><option value="recert">갱신심사</option></select></td>
                                         <td>
                                             <div class="complex-wrap">
-                                            <select class="cp14001"><option value="H">높음(H)</option><option value="M" selected>중간(M)</option><option value="L">낮음(L)</option></select>
+                                            <select class="cp14001"><option value="H">높음(H)</option><option value="M" selected>중간(M)</option><option value="L">낮음(L)</option><option value="Li">제한(Li)</option></select>
                                             <button type="button" class="info-btn" onclick="showInfo('14001')">🔍분류</button>
                                             </div>
                                         </td>
@@ -232,15 +230,17 @@
                                     <tr>
                                         <td><b>ISO 22301</b></td>
                                         <td><select class="cy22301" onchange="updateUI_block(this)"><option value="none">미선택</option><option value="initial">최초심사</option><option value="surv">사후심사</option><option value="recert">갱신심사</option></select></td>
-                                        <div class="complex-wrap">
-                                        <td><span style="color:#ccc;">(재난분류)</span> <button type="button" class="info-btn" onclick="showInfo('22301')">🔍분류</button></td>
-                                        </div>
+                                        <td>
+                                            <div class="complex-wrap">
+                                                <span style="color:#ccc;">(재난분류)</span> <button type="button" class="info-btn" onclick="showInfo('22301')">🔍분류</button>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><b>ISO 37001</b></td>
                                         <td><select class="cy37001" onchange="updateUI_block(this)"><option value="none">미선택</option><option value="initial">최초심사</option><option value="surv">사후심사</option><option value="recert">갱신심사</option></select></td>
                                         <td>
-                                        <div class="complex-wrap">
+                                            <div class="complex-wrap">
                                             <select class="cp37001"><option value="H">높음(H)</option><option value="M" selected>중간(M)</option><option value="L">낮음(L)</option></select>
                                             <button type="button" class="info-btn" onclick="showInfo('37001')">🔍분류</button>
                                             </div>
@@ -464,6 +464,7 @@
                                <li>기술적 시험 및 연구소 </li>
                                <li>보건, 병원, 수의 </li>
                                <li>호텔, 레스토랑을 제외한 레저 서비스 및 개인 서비스</li>
+                            </ul></td></tr>
                         <tr><th style="background-color:#e8f5e9;">낮음(Low)</th>
                             <td><ul>
                                 <li>호텔, 식당 </li>
@@ -642,7 +643,7 @@
         "경기": { "과천시": { "base": 20000, "diff": 20000 }, "고양시": { "base": 30000, "diff": 30000 }, "광명시": { "base": 30000, "diff": 30000 }, "구리시": { "base": 30000, "diff": 30000 }, "군포시": { "base": 30000, "diff": 30000 }, "김포시": { "base": 30000, "diff": 30000 }, "남양주시": { "base": 30000, "diff": 30000 }, "부천시": { "base": 30000, "diff": 30000 }, "성남시": { "base": 30000, "diff": 30000 }, "수원시": { "base": 30000, "diff": 30000 }, "시흥시": { "base": 30000, "diff": 30000 }, "안산시": { "base": 30000, "diff": 30000 }, "안양시": { "base": 30000, "diff": 30000 }, "양주시": { "base": 30000, "diff": 30000 }, "의왕시": { "base": 30000, "diff": 30000 }, "의정부시": { "base": 30000, "diff": 30000 }, "하남시": { "base": 30000, "diff": 30000 }, "가평군": { "base": 35000, "diff": 35000 }, "광주시": { "base": 35000, "diff": 35000 }, "동두천시": { "base": 35000, "diff": 35000 }, "안성시": { "base": 35000, "diff": 35000 }, "양평군": { "base": 35000, "diff": 35000 }, "여주시": { "base": 35000, "diff": 35000 }, "연천군": { "base": 35000, "diff": 35000 }, "오산시": { "base": 35000, "diff": 35000 }, "용인시": { "base": 35000, "diff": 35000 }, "이천시": { "base": 35000, "diff": 35000 }, "파주시": { "base": 35000, "diff": 35000 }, "평택시": { "base": 35000, "diff": 35000 }, "포천시": { "base": 35000, "diff": 35000 }, "화성시": { "base": 35000, "diff": 35000 } },
         "인천": { "인천광역시": { "base": 30000, "diff": 30000 }, "강화군": { "base": 35000, "diff": 35000 } },
         "강원": { "강릉시": { "base": 105200, "diff": 120000 }, "고성군": { "base": 96800, "diff": 120000 }, "동해시": { "base": 112600, "diff": 120000 }, "삼척시": { "base": 109000, "diff": 120000 }, "속초시": { "base": 94600, "diff": 120000 }, "양구군": { "base": 90000, "diff": 120000 }, "양양군": { "base": 89800, "diff": 120000 }, "영월군": { "base": 72800, "diff": 120000 }, "원주시": { "base": 79400, "diff": 120000 }, "인제군": { "base": 86400, "diff": 120000 }, "정선군": { "base": 107200, "diff": 120000 }, "철원군": { "base": 77200, "diff": 120000 }, "춘천시": { "base": 69600, "diff": 120000 }, "태백시": { "base": 120400, "diff": 120000 }, "평창군": { "base": 89400, "diff": 120000 }, "홍천군": { "base": 77000, "diff": 120000 }, "화천군": { "base": 78800, "diff": 120000 }, "횡성군": { "base": 77800, "diff": 120000 } },
-        "충북": { "괴산군": { "base": 77000, "diff": 120000 }, "단양군": { "base": 86600, "diff": 120000 }, "보은군": { "base": 112400, "diff": 120000 }, "영동군": { "base": 107000, "diff": 120000 }, "옥천군": { "base": 102600, "diff": 120000 }, "음성군": { "base": 109800, "diff": 120000 }, "제천시": { "base": 80800, "diff": 120000 }, "증평군": { "base": 106800, "diff": 120000 }, "진천군": { "base": 87000, "diff": 120000 } },
+        "충북": { "괴산군": { "base": 77000, "diff": 120000 }, "단양군": { "base": 86600, "diff": 120000 }, "보은군": { "base": 112400, "diff": 120000 }, "영동군": { "base": 107000, "diff": 120000 }, "옥천군": { "base": 102600, "diff": 120000 }, "음성군": { "base": 109800, "diff": 120000 }, "제천시": { "base": 80800, "diff": 120000 }, "증평군": { "base": 106800, "diff": 120000 }, "진천군": { "base": 87000, "diff": 120000 }, "청주시": { "base": 103600, "diff": 120000 },"충주시": { "base": 112600, "diff": 120000 } },
         "충남": { "계룡시": { "base": 101600, "diff": 120000 }, "공주시": { "base": 100800, "diff": 120000 }, "금산군": { "base": 90800, "diff": 120000 }, "논산시": { "base": 106200, "diff": 120000 }, "당진시": { "base": 72600, "diff": 120000 }, "보령시": { "base": 87800, "diff": 120000 }, "부여군": { "base": 87800, "diff": 120000 }, "서산시": { "base": 77600, "diff": 120000 }, "서천군": { "base": 100200, "diff": 120000 }, "아산시": { "base": 78200, "diff": 120000 }, "예산군": { "base": 87800, "diff": 120000 }, "천안시": { "base": 78200, "diff": 120000 }, "청양군": { "base": 85000, "diff": 120000 }, "태안군": { "base": 81400, "diff": 120000 }, "홍성군": { "base": 87800, "diff": 120000 } },
         "전북": { "고창군": { "base": 129600, "diff": 120000 }, "군산시": { "base": 124200, "diff": 120000 }, "김제시": { "base": 146400, "diff": 120000 }, "남원시": { "base": 129000, "diff": 120000 }, "무주군": { "base": 108400, "diff": 120000 }, "부안군": { "base": 96200, "diff": 120000 }, "순창군": { "base": 137400, "diff": 120000 }, "완주군": { "base": 119200, "diff": 120000 }, "익산시": { "base": 114600, "diff": 120000 }, "임실군": { "base": 121400, "diff": 120000 }, "장수군": { "base": 113800, "diff": 120000 }, "전주시": { "base": 119200, "diff": 120000 }, "정읍시": { "base": 129600, "diff": 120000 }, "진안군": { "base": 119200, "diff": 120000 } },
         "전남": { "강진군": { "base": 174600, "diff": 120000 }, "고흥군": { "base": 176600, "diff": 120000 }, "곡성군": { "base": 129800, "diff": 120000 }, "광양시": { "base": 166000, "diff": 120000 }, "구례군": { "base": 133600, "diff": 120000 }, "나주시": { "base": 147000, "diff": 120000 }, "담양군": { "base": 150000, "diff": 120000 }, "목포시": { "base": 156200, "diff": 120000 }, "무안군": { "base": 159800, "diff": 120000 }, "보성군": { "base": 167200, "diff": 120000 }, "순천시": { "base": 138600, "diff": 120000 }, "신안군": { "base": 156200, "diff": 120000 }, "여수시": { "base": 145000, "diff": 120000 }, "영광군": { "base": 163200, "diff": 120000 }, "영암군": { "base": 161600, "diff": 120000 }, "완도군": { "base": 193800, "diff": 120000 }, "장성군": { "base": 149000, "diff": 120000 }, "장흥군": { "base": 174000, "diff": 120000 }, "진도군": { "base": 184000, "diff": 120000 }, "함평군": { "base": 155800, "diff": 120000 }, "해남군": { "base": 178000, "diff": 120000 }, "화순군": { "base": 149200, "diff": 120000 } },
@@ -664,9 +665,18 @@
     }
 
     const ranges = [{n:1, x:5}, {n:6, x:10}, {n:11, x:15}, {n:16, x:25}, {n:26, x:45}, {n:46, x:65}, {n:66, x:85}, {n:86, x:125}, {n:126, x:175}, {n:176, x:275}, {n:276, x:425}, {n:426, x:625}, {n:626, x:875}, {n:876, x:1175}, {n:1176, x:1550}, {n:1551, x:2025}, {n:2026, x:2675}, {n:2676, x:3450}, {n:3451, x:4350}, {n:4351, x:5450}, {n:5451, x:6800}, {n:6801, x:8500}, {n:8501, x:10700}];
+    
     const md9001 = [1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
-    const mdComp = [[3, 2.5, 2.5], [3.5, 3, 3], [4.5, 3.5, 3], [5.5, 4.5, 3.5], [7, 5.5, 4], [8, 6, 4.5], [9, 7, 5], [11, 8, 5.5], [12, 9, 6], [13, 10, 7], [15, 11, 8], [16, 12, 9], [17, 13, 10], [19, 15, 11], [20, 16, 12], [21, 17, 12], [23, 18, 13], [25, 19, 14], [27, 20, 15], [28, 21, 16], [30, 23, 17], [32, 25, 19], [34, 27, 20]];
+    
+    // ISO 14001: [높음(H), 중간(M), 낮음(L), 제한(Li)]
+    const md14001 = [[3, 2.5, 2.5, 2.5], [3.5, 3, 3, 3], [4.5, 3.5, 3, 3], [5.5, 4.5, 3.5, 3], [7, 5.5, 4, 3], [8, 6, 4.5, 3.5], [9, 7, 5, 3.5], [11, 8, 5.5, 4], [12, 9, 6, 4.5], [13, 10, 7, 5], [15, 11, 8, 5.5], [16, 12, 9, 6], [17, 13, 10, 6.5], [19, 15, 11, 7], [20, 16, 12, 7.5], [21, 17, 12, 8], [23, 18, 13, 8.5], [25, 19, 14, 9], [27, 20, 15, 10], [28, 21, 16, 11], [30, 23, 17, 12], [32, 25, 19, 13], [34, 27, 20, 14]];
+    
+    // ISO 45001: [높음(H), 중간(M), 낮음(L)]
+    const md45001 = [[3, 2.5, 2.5], [3.5, 3, 3], [4.5, 3.5, 3], [5.5, 4.5, 3.5], [7, 5.5, 4], [8, 6, 4.5], [9, 7, 5], [11, 8, 5.5], [12, 9, 6], [13, 10, 7], [15, 11, 8], [16, 12, 9], [17, 13, 10], [19, 15, 11], [20, 16, 12], [21, 17, 12], [23, 18, 13], [25, 19, 14], [27, 20, 15], [28, 21, 16], [30, 23, 17], [32, 25, 19], [34, 27, 20]];
+    
     const md22301 = [2, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+    
+    // ISO 37001 및 37301: [높음(H), 중간(M), 낮음(L)]
     const md37001 = [[3, 2.5, 2.5], [3, 2.5, 2.5], [3, 2.5, 2.5], [3, 2.5, 2.5], [4, 2.5, 2.5], [5, 2.5, 2.5], [6, 4, 3], [7, 5, 4], [8, 6, 4], [9, 6, 4], [10, 7, 5], [11, 8, 6], [12, 9, 6], [13, 9, 6], [14, 10, 7], [15, 10, 7], [16, 11, 8], [17, 12, 8], [18, 13, 9], [19, 14, 10], [20, 15, 11], [21, 15, 11], [22, 16, 12]];
 
     function isoCeil(val) { return Math.ceil(val * 2) / 2; }
@@ -744,13 +754,23 @@
             copyBufferIso.push(`\n[${siteName}]`, `1. 종업원수: ${count}명`, `2. 감소근거 항목: ${reasonsText}`);
 
             configs.forEach(s => {
-                let compTxt = (s.id !== '9001' && s.id !== '22301') ? ` (${{'H':'높음','M':'중간','L':'낮음'}[s.cp]})` : "";
+                let compTxt = (s.id !== '9001' && s.id !== '22301') ? ` (${{'H':'높음','M':'중간','L':'낮음','Li':'제한'}[s.cp]})` : "";
                 
                 let base;
-                if(s.id === '9001') base = md9001[idx];
-                else if(s.id === '22301') base = md22301[idx];
-                else if(s.id === '37001' || s.id === '37301') base = md37001[idx][s.cp === 'H' ? 0 : s.cp === 'M' ? 1 : 2];
-                else base = mdComp[idx][s.cp === 'H' ? 0 : s.cp === 'M' ? 1 : 2]; 
+                if(s.id === '9001') {
+                    base = md9001[idx];
+                } else if(s.id === '22301') {
+                    base = md22301[idx];
+                } else if(s.id === '14001') {
+                    let cpIdx = s.cp === 'H' ? 0 : s.cp === 'M' ? 1 : s.cp === 'L' ? 2 : 3;
+                    base = md14001[idx][cpIdx];
+                } else if(s.id === '45001') {
+                    let cpIdx = s.cp === 'H' ? 0 : s.cp === 'M' ? 1 : 2;
+                    base = md45001[idx][cpIdx];
+                } else if(s.id === '37001' || s.id === '37301') {
+                    let cpIdx = s.cp === 'H' ? 0 : s.cp === 'M' ? 1 : 2;
+                    base = md37001[idx][cpIdx];
+                }
 
                 let weight;
                 if(s.id === '22301') {
